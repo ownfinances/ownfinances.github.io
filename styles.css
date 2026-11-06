@@ -1,0 +1,482 @@
+/* The landing page, in the colors of the app (client/src/index.css), light and dark. */
+:root {
+  --bg: #f5f6f8;
+  --surface: #ffffff;
+  --border: #e2e5ea;
+  --text: #1c2230;
+  --muted: #6b7280;
+  --accent: #4f46e5;
+  --accent-hover: #4338ca;
+  --accent-text: #ffffff;
+  --accent-soft: #eef0ff;
+  --radius: 14px;
+  --shadow: 0 1px 2px rgb(0 0 0 / 0.05), 0 12px 32px rgb(28 34 48 / 0.08);
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111318;
+    --surface: #1a1d24;
+    --border: #2c313c;
+    --text: #e6e8ec;
+    --muted: #9aa1ad;
+    --accent: #818cf8;
+    --accent-hover: #a5b4fc;
+    --accent-text: #111318;
+    --accent-soft: #23253a;
+    --shadow: 0 12px 32px rgb(0 0 0 / 0.35);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  overflow-x: clip;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* A screenshot with its dark variant (a <source>), laid out like its image. */
+picture {
+  display: block;
+  min-width: 0;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  margin: 0 0 0.6rem;
+  overflow-wrap: anywhere;
+}
+
+h1 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: clamp(1.6rem, 3.2vw, 2.3rem);
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-size: 1.15rem;
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+code,
+pre {
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 0.85em;
+}
+
+pre {
+  margin: 0 0 1rem;
+  padding: 0.9rem 1rem;
+  overflow-x: auto;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+/* Header */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.8rem max(1rem, calc((100vw - 1180px) / 2));
+  background: color-mix(in srgb, var(--surface) 85%, transparent);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: var(--text);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.site-header nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem 1.2rem;
+  font-size: 0.95rem;
+}
+
+.site-header nav a {
+  color: var(--muted);
+}
+
+.site-header nav a:hover {
+  color: var(--accent);
+}
+
+/* Sections */
+
+main {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.section {
+  padding: 5rem 0 1rem;
+}
+
+/* The main parts of the page (budget, wealth, AI, hosting), divided by a line and much space. */
+.segment {
+  margin-top: 6rem;
+  padding-top: 7rem;
+  border-top: 1px solid var(--border);
+}
+
+.section-head {
+  max-width: 760px;
+  margin-bottom: 2.5rem;
+}
+
+.section-head.centered {
+  margin: 0 auto 3.5rem;
+  text-align: center;
+}
+
+.section-head p:last-child {
+  color: var(--muted);
+}
+
+.eyebrow {
+  margin: 0 0 0.6rem;
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.lead {
+  font-size: 1.2rem;
+  color: var(--muted);
+}
+
+/* Hero */
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  gap: 4rem;
+  align-items: center;
+  padding: 6rem 0 4rem;
+}
+
+.hero-shots {
+  position: relative;
+  padding-bottom: 2rem;
+}
+
+.shot {
+  display: block;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  background: var(--surface);
+}
+
+.hero-shots .phone {
+  position: absolute;
+  right: -1rem;
+  bottom: 0;
+  width: 26%;
+  /* The rounded corners of an iPhone's display. */
+  border-radius: 14% / 6.5%;
+}
+
+/* The two main features, as cards below the hero. */
+
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.pillar {
+  display: block;
+  padding: 2.2rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  box-shadow: var(--shadow);
+  transition: border-color 0.15s;
+}
+
+.pillar:hover {
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+.pillar h2 {
+  font-size: 1.5rem;
+}
+
+.pillar ul {
+  margin: 0 0 1.2rem;
+  padding-left: 1.2rem;
+  color: var(--muted);
+}
+
+.pillar-number {
+  display: inline-grid;
+  place-items: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  margin-bottom: 1rem;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.more {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.checks {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--muted);
+}
+
+.checks li {
+  position: relative;
+  margin-bottom: 0.8rem;
+  padding-left: 1.8rem;
+}
+
+.checks.columns {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2.5rem;
+  margin-bottom: 4rem;
+}
+
+.checks.columns li {
+  margin: 0;
+}
+
+.checks li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* Parts of the app's pages, at their own size (see screenshots.ts), centered below a part's text. */
+.crop {
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* Parts one below the other, apart like the charts. */
+.crop + .crop {
+  margin-top: 2rem;
+}
+
+/* Charts on their own, next to each other as far as they fit. */
+.charts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.charts .crop {
+  margin: 0;
+}
+
+/* A conversation with the assistant, as example. */
+.chat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}
+
+.chat p {
+  margin: 0;
+  padding: 0.7rem 0.95rem;
+  border-radius: 14px;
+  max-width: 92%;
+}
+
+.chat .you {
+  align-self: flex-end;
+  background: var(--accent);
+  color: var(--accent-text);
+  border-bottom-right-radius: 4px;
+}
+
+.chat .ai {
+  align-self: flex-start;
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-bottom-left-radius: 4px;
+}
+
+.chat .ai::before {
+  content: 'KI-Assistent';
+  display: block;
+  margin-bottom: 0.2rem;
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* Cards */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.cards.three {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.card {
+  min-width: 0;
+  padding: 1.8rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.card > p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.card p + pre,
+.card pre + p {
+  margin-top: 0.8rem;
+}
+
+/* Legal pages, e.g. the imprint: a narrow column of text. */
+.legal {
+  max-width: 720px;
+  padding-top: 3rem;
+}
+
+.legal h1 {
+  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+}
+
+.legal h2 {
+  margin-top: 2rem;
+  font-size: 1.15rem;
+}
+
+/* Footer */
+
+.site-footer {
+  margin-top: 5rem;
+  padding: 2.5rem 1rem;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.site-footer p {
+  margin: 0.2rem 0;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+/* Narrow screens: one column. */
+
+@media (max-width: 900px) {
+  .hero,
+  .pillars,
+  .checks.columns {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+  }
+
+  .checks.columns {
+    gap: 0.5rem;
+  }
+
+  .segment {
+    margin-top: 3rem;
+    padding-top: 4rem;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 16px;
+  }
+
+  .site-header nav {
+    display: none;
+  }
+
+  .hero {
+    padding-top: 2.5rem;
+  }
+
+  .hero-shots .phone {
+    right: 0;
+    width: 32%;
+  }
+}

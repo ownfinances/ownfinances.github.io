@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Impressum – ownfinances</title>
+    <meta name="robots" content="noindex" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="icon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="./">
+        <img src="icon.svg" alt="" width="28" height="28" />
+        ownfinances
+      </a>
+      <nav aria-label="Seiten">
+        <a href="./">Zur Startseite</a>
+      </nav>
+    </header>
+
+    <main class="legal">
+      <h1>Impressum</h1>
+
+      <h2>Angaben gemäß § 5 DDG</h2>
+      <p>
+        Christian Hoffmeister<br />
+        Ochsenweberstr. 15<br />
+        22419 Hamburg
+      </p>
+
+      <h2>Kontakt</h2>
+      <!-- The address only reversed, so bots that look for one in pages don't find it; the script turns it
+           into a link, without JavaScript it stays spelled out. -->
+      <p>E-Mail: <span class="email" data-reversed="etis.retsiemffoh@musserpmi">impressum (at) hoffmeister (Punkt) site</span></p>
+
+      <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
+      <p>
+        Christian Hoffmeister<br />
+        Ochsenweberstr. 15<br />
+        22419 Hamburg
+      </p>
+    </main>
+
+    <footer class="site-footer">
+      <p class="muted"><a href="./">ownfinances</a> · <a href="impressum.html">Impressum</a></p>
+    </footer>
+    <script>
+      for (const element of document.querySelectorAll('.email[data-reversed]')) {
+        const address = [...element.dataset.reversed].reverse().join('')
+        const link = document.createElement('a')
+        link.href = 'mailto:' + address
+        link.textContent = address
+        element.replaceWith(link)
+      }
+    </script>
+  </body>
+</html>

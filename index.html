@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ownfinances – Haushaltsbuch und Vermögen</title>
+    <meta
+      name="description"
+      content="Selbst gehostet: Haushaltsbuch mit Budget und Vermögen mit Depot an einem Ort – und ein KI-Assistent, der die Fleißarbeit übernimmt."
+    />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="icon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top">
+        <img src="icon.svg" alt="" width="28" height="28" />
+        ownfinances
+      </a>
+      <nav aria-label="Abschnitte">
+        <a href="#haushaltsbuch">Haushaltsbuch</a>
+        <a href="#vermoegen">Vermögen</a>
+        <a href="#ki">KI</a>
+        <a href="#mehr">Außerdem</a>
+        <a href="#hosting">Selbst hosten</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-text">
+          <p class="eyebrow">Selbst gehostet</p>
+          <h1>Haushaltsbuch und Vermögen. An einem Ort.</h1>
+          <p class="lead">Wohin dein Geld geht und was daraus wird – mit einem KI-Assistenten, der die Fleißarbeit übernimmt.</p>
+        </div>
+        <div class="hero-shots">
+          <picture>
+            <source srcset="screenshots/spending-dark.png" media="(prefers-color-scheme: dark)" />
+            <img class="shot" src="screenshots/spending.png" alt="Die Ausgaben eines Monats" width="1440" height="900" />
+          </picture>
+          <picture>
+            <source srcset="screenshots/phone-wealth-dark.png" media="(prefers-color-scheme: dark)" />
+            <img class="shot phone" src="screenshots/phone-wealth.png" alt="Das Vermögen auf dem Handy" width="390" height="844" />
+          </picture>
+        </div>
+      </section>
+
+      <div class="pillars">
+        <a class="pillar" href="#haushaltsbuch">
+          <span class="pillar-number">1</span>
+          <h2>Haushaltsbuch &amp; Budget</h2>
+          <ul>
+            <li>Buchungen aus MoneyMoney, in Kategorien und Positionen</li>
+            <li>Budget je Kategorie mit Ampel, Sparquote je Monat</li>
+            <li>Belege verlinkt, abgeschlossene Jahre gesperrt</li>
+          </ul>
+          <span class="more">Zum Haushaltsbuch →</span>
+        </a>
+        <a class="pillar" href="#vermoegen">
+          <span class="pillar-number">2</span>
+          <h2>Vermögen &amp; Portfolio</h2>
+          <ul>
+            <li>Konten und Depots, bewertet mit aktuellen Kursen</li>
+            <li>Einstand nach FIFO, Gewinne, Dividenden und Rendite</li>
+            <li>Aufteilung nach Region und Anlageklasse</li>
+          </ul>
+          <span class="more">Zum Vermögen →</span>
+        </a>
+      </div>
+
+      <section id="haushaltsbuch" class="section segment">
+        <div class="section-head centered">
+          <p class="eyebrow">1 · Haushaltsbuch &amp; Budget</p>
+          <h2>Jeder Euro an seinem Platz</h2>
+        </div>
+        <ul class="checks columns">
+          <li>Importiere Umsätze aus MoneyMoney – mit Vorschau, ohne Dubletten.</li>
+          <li>Teile Einkäufe in Positionen mit eigenen Kategorien; Jahreszahlungen verteilen sich von selbst auf die Monate ihres Jahresbudgets.</li>
+          <li>Verknüpfe Umbuchungen zwischen deinen Konten – der Import erkennt sie, das Budget lässt sie außen vor.</li>
+          <li>Sieh pro Monat, Quartal oder Jahr, wofür das Geld draufgeht – und was übrig bleibt.</li>
+          <li>Plane ein Budget je Kategorie, pro Woche, Monat, Quartal oder Jahr: Die Ampel zeigt, wo es im laufenden Monat knapp wird, die Vorschau, wie viel in den nächsten Monaten noch frei ist.</li>
+        </ul>
+        <picture class="crop"><source srcset="screenshots/transactions-dark.png 3x" media="(prefers-color-scheme: dark)" /><img class="shot" src="screenshots/transactions.png" width="677" height="295" alt="Eine Bestellung mit Beleg, aufgeteilt in Positionen mit eigenen Kategorien" loading="lazy" /></picture>
+        <picture class="crop"><source srcset="screenshots/budget-targets-dark.png 3x" media="(prefers-color-scheme: dark)" /><img class="shot" src="screenshots/budget-targets.png" width="897" height="475" alt="Die Budgets der Kategorien: ausgegeben, geplant und übrig, mit Ampel" loading="lazy" /></picture>
+        <div class="charts budget">
+          <picture class="crop"><source srcset="screenshots/chart-rings-dark.png 3x" media="(prefers-color-scheme: dark)" /><img class="shot" src="screenshots/chart-rings.png" width="561" height="471" alt="Die Ausgaben als Ringe: innen Oberkategorien, außen ihre Unterkategorien" loading="lazy" /></picture>
+          <picture class="crop"><source srcset="screenshots/chart-categories-dark.png 3x" media="(prefers-color-scheme: dark)" /><img class="shot" src="screenshots/chart-categories.png" width="561" height="471" alt="Ausgaben nach Kategorie" loading="lazy" /></picture>
+          <picture class="crop"><source srcset="screenshots/chart-months-dark.png 3x" media="(prefers-color-scheme: dark)" /><img class="shot" src="screenshots/chart-months.png" width="797" height="369" alt="Einnahmen und Ausgaben pro Monat mit Saldo" loading="lazy" /></picture>
+          <picture class="crop"><source srcset="screenshots/chart-budget-dark.png 3x" media="(prefers-color-scheme: dark)" /><img class="shot" src="screenshots/chart-budget.png" width="797" height="369" alt="Budget und Ausgaben pro Monat: der laufende Monat mit Ampel, vergangene neutral" loading="lazy" /></picture>
+        </div>
+      </section>
+
+      <section id="vermoegen" class="section segment">
+        <div class="section-head centered">
+          <p class="eyebrow">2 · Vermögen &amp; Portfolio</p>
+          <h2>Dein Vermögen auf einen Blick</h2>
+        </div>
+        <ul class="checks columns">
+          <li>Kontostände und Depots zusammen, mit stündlichen Kursen und Verlauf – auch Wertpapiere in Dollar, umgerechnet zum Kurs der EZB.</li>
+          <li>Käufe und Verkäufe nach FIFO: Einstand, realisierte Gewinne, Dividenden, Gebühren, Steuern.</li>
+          <li>Rendite insgesamt und je Klasse: zeitgewichtet (TWR) zum Vergleich mit dem Markt, als interner Zinsfuß (IRR) für dein Geld, auch je Position – jede Kennzahl erklärt per „?“.</li>
+          <li>Klassifiziere nach Region oder Anlageklasse und sieh, wie sich die Anteile verschieben.</li>
+          <li>Gegen die Inflation: Rendite und Vermögen neben der Kaufkraft nach dem Verbraucherpreisindex.</li>
+        </ul>
+        <picture class="crop"><source srcset="screenshots/portfolio-dark.png 3x" media="(prefers-color-scheme: dark)" /><img class="shot" src="screenshots/portfolio.png" width="997" height="219" alt="Nettovermögen, Kontostände und Wertpapiere mit Einstand, Gewinnen und Dividenden" loading="lazy" /></picture>
+        <picture class="crop"><source srcset="screenshots/positions-dark.png 3x" media="(prefers-color-scheme: dark)" /><img class="shot" src="screenshots/positions.png" width="997" height="266" alt="Die Wertpapiere im Bestand mit Einstand, Gewinn und internem Zinsfuß" loading="lazy" /></picture>
+        <div class="charts wealth">
+          <picture class="crop"><source srcset="screenshots/chart-wealth-dark.png 3x" media="(prefers-color-scheme: dark)" /><img class="shot" src="screenshots/chart-wealth.png" width="559" height="369" alt="Nettovermögen, Wertpapiere und Einstand im Zeitverlauf" loading="lazy" /></picture>
+          <picture class="crop"><source srcset="screenshots/chart-classes-dark.png 3x" media="(prefers-color-scheme: dark)" /><img class="shot" src="screenshots/chart-classes.png" width="559" height="369" alt="Die Anteile der Regionen am Vermögen im Zeitverlauf" loading="lazy" /></picture>
+        </div>
+      </section>
+
+      <section id="ki" class="section segment">
+        <div class="section-head centered">
+          <p class="eyebrow">Mit KI über MCP</p>
+          <h2>Die Fleißarbeit macht der Assistent</h2>
+        </div>
+        <div class="cards three">
+          <div class="card">
+            <h3>Kategorisieren</h3>
+            <div class="chat">
+              <p class="you">Kategorisiere die neuen Buchungen.</p>
+              <p class="ai">23 erledigt. Bei „Kleinanzeigen“: Freizeit oder Haushalt?</p>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Belege aus Paperless</h3>
+            <div class="chat">
+              <p class="you">Teil die Amazon-Bestellungen nach ihren Belegen auf.</p>
+              <p class="ai">Drei Positionen, Beleg verlinkt.</p>
+            </div>
+          </div>
+          <div class="card">
+            <h3>ETFs nach Regionen</h3>
+            <div class="chat">
+              <p class="you">Aktualisiere die Regionen meiner ETFs.</p>
+              <p class="ai">MSCI World: 72 % Nordamerika, 16 % Europa, 12 % Asien.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="mehr" class="section segment">
+        <div class="section-head centered">
+          <p class="eyebrow">Außerdem</p>
+          <h2>Was sonst noch dazugehört</h2>
+        </div>
+        <div class="cards three">
+          <div class="card">
+            <h3>Gemeinsam</h3>
+            <p>Teile einen Haushalt mit deinem Partner – oder nur zum Lesen, etwa mit dem Steuerberater. Getrennte Workspaces für Privat und Firma.</p>
+          </div>
+          <div class="card">
+            <h3>Berichte und Steuerunterlagen</h3>
+            <p>Die Vermögensbilanz zum Stichtag und der Jahresrückblick mit Sparquote, Vermögen und Rendite gegenüber Vorjahr und Inflation als PDF – und die Steuerunterlagen eines Jahres als ZIP: der Steuerbericht mit Verkäufen, Dividenden, Zinsen und Vorabpauschalen, alle Belege und Kontoauszüge, per Link auch an die Steuerberatung.</p>
+          </div>
+          <div class="card">
+            <h3>Snapshots</h3>
+            <p>Jede Nacht und vor jedem Import eine Kopie des Workspaces – geht etwas schief, ist sie schnell wiederhergestellt.</p>
+          </div>
+          <div class="card">
+            <h3>Auf dem Handy</h3>
+            <p>Für kleine Bildschirme gemacht und auf dem Homescreen installierbar, wie eine App – auf Wunsch jeden Morgen mit deinem Nettovermögen als Benachrichtigung.</p>
+          </div>
+          <div class="card">
+            <h3>Privatsphäre-Modus</h3>
+            <p>Ein Klick aufs Auge blendet alle Beträge aus, wenn jemand mit auf den Bildschirm schaut.</p>
+          </div>
+          <div class="card">
+            <h3>Per Tastatur</h3>
+            <p>⌘K bzw. Strg+K findet jede Aktion; einzelne Tasten bearbeiten, teilen und löschen die Zeile unter der Maus.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="hosting" class="section segment">
+        <div class="section-head centered">
+          <p class="eyebrow">Selbst hosten</p>
+          <h2>Eine Datei. Deine Daten.</h2>
+          <p class="muted">Eine <code>compose.yaml</code> mit App und Datenbank, dann <code>docker compose up -d</code>:</p>
+        </div>
+        <pre><code>services:
+  ownfinances:
+    image: ghcr.io/ownfinances/ownfinances:0.115.0
+    ports: ["3001:3001"]
+    environment:
+      DATABASE_URL: postgres://ownfinances:geheim@postgres:5432/ownfinances
+    depends_on:
+      postgres:
+        condition: service_healthy
+  postgres:
+    image: postgres:18-alpine
+    environment:
+      POSTGRES_USER: ownfinances
+      POSTGRES_PASSWORD: geheim
+      POSTGRES_DB: ownfinances
+    volumes: [postgres:/var/lib/postgresql]
+    healthcheck:
+      test: pg_isready -U ownfinances
+      interval: 2s
+volumes:
+  postgres:</code></pre>
+        <p class="muted">Auf <code>http://localhost:3001</code> den ersten Nutzer anlegen, dann den Assistenten (z. B. Claude, ChatGPT, Gemini CLI oder Codex) mit der Adresse <code>/mcp</code> verbinden – er meldet sich im Browser an, ein API-Token ist nicht nötig.</p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p class="muted">ownfinances · Alle Bilder zeigen erfundene Demo-Zahlen. · <a href="impressum.html">Impressum</a></p>
+    </footer>
+  </body>
+</html>
